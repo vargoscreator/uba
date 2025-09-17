@@ -508,20 +508,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-    gsap.utils.toArray(".trainer__name, .trainer__descr").forEach((el, i) => {
-        gsap.to(el, {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: el,
-                start: "top 80%",
-                toggleActions: "play none none reverse"
-            },
-            delay: i * 0.2
-        });
-    });
 
     gsap.utils.toArray(".trainer__item").forEach(item => {
         const tl = gsap.timeline({
@@ -871,6 +857,28 @@ document.addEventListener("DOMContentLoaded", function() {
         scrollTrigger: {
             trigger: ".contacts__quote",
             start: "top 90%",
+            toggleActions: "play none none reverse",
+        }
+    });
+    gsap.from(".trainer__name", {
+        y: -50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".trainer__name",
+            start: "top 50%",
+            toggleActions: "play none none reverse",
+        }
+    });
+    gsap.from(".trainer__descr", {
+        y: -50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".trainer__descr",
+            start: "top 50%",
             toggleActions: "play none none reverse",
         }
     });

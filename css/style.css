@@ -1810,11 +1810,6 @@ main.main{
     font-weight: 300;
     line-height: normal;
 }
-.trainer__name,
-.trainer__descr {
-  opacity: 0;
-  transform: translateY(-2.604vw);
-}
 .trainer__btn {
     position: absolute;
     bottom: -10.417vw;
@@ -1980,14 +1975,11 @@ main.main{
     }
     .trainer__name{
         font-size: 18px;
+        line-height: normal;
     }
     .trainer__descr{
         margin-top: 20px;
         font-size: 14px;
-    }
-    .trainer__name,
-    .trainer__descr {
-        transform: translateY(-49.997px);
     }
     .trainer__btn {
         bottom: initial;
