@@ -1023,3 +1023,26 @@ slides.forEach(slide => {
         });
     });
 });
+
+
+
+const headerBurger = document.querySelector('.header__burger');
+const headerMenu = document.querySelector('.header__menu');
+const headerMenuList = headerMenu.querySelector('ul');
+headerBurger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    headerMenu.classList.toggle('active');
+});
+document.addEventListener('click', (e) => {
+    const isClickInsideMenu = headerMenuList.contains(e.target);
+    const isClickOnBurger = headerBurger.contains(e.target);
+
+    if (!isClickInsideMenu && !isClickOnBurger) {
+        headerMenu.classList.remove('active');
+    }
+});
+headerMenuList.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        headerMenu.classList.remove('active');
+    });
+});
