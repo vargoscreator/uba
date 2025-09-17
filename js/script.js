@@ -456,7 +456,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     gsap.from(".support__title", {
-        x: -200, // слева
+        x: -200,
         opacity: 0,
         duration: 1,
         ease: "power3.out",
@@ -469,13 +469,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     gsap.utils.toArray(".support__icon").forEach((el, i) => {
         gsap.from(el, {
-            x: -100, // слева
+            x: -100,
             opacity: 0,
             duration: 1,
             ease: "power3.out",
             scrollTrigger: {
                 trigger: el,
-                start: "top 90%", // можно подкорректировать для появления поочередно
+                start: "top 90%",
                 toggleActions: "play none none reverse"
             },
             delay: i * 0.2
@@ -777,22 +777,116 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-    
 
-    gsap.fromTo(".contacts__mountain",
-    { y: 100, opacity: 0 }, 
-    { 
+
+    gsap.fromTo(".contacts__mountain", {
+        y: 100,
+        opacity: 0
+    }, {
         y: 0,
         opacity: 1,
         ease: "power3.out",
         scrollTrigger: {
-        trigger: ".contacts__mountain",
-        start: "top 30%",
-        end: "bottom 100%",
-        scrub: true,
+            trigger: ".contacts__mountain",
+            start: "top 30%",
+            end: "bottom 100%",
+            scrub: true,
         }
-    }
-    );
+    });
+
+
+    gsap.from(".contacts__title", {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".contacts__title",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+        }
+    });
+
+    gsap.from(".contacts__adress", {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".contacts__adress",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+        }
+    });
+    gsap.from(".contacts__tel", {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".contacts__tel",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+        }
+    });
+
+    gsap.from(".contacts__mail", {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".contacts__mail",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+        }
+    });
+    gsap.from(".contacts__socials", {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".contacts__socials",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+        }
+    });
+    gsap.from(".contacts__btn", {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".contacts__btn",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+        }
+    });
+    gsap.from(".contacts__join", {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".contacts__join",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+        }
+    });
+    gsap.from(".contacts__quote", {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".contacts__quote",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+        }
+    });
+
+
 
 });
 
@@ -825,17 +919,17 @@ document.querySelectorAll(".faq__item-title").forEach(title => {
 });
 const scrollUp = document.querySelector(".scroll-up");
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 400) {
-    scrollUp.classList.add("scrolled");
-  } else {
-    scrollUp.classList.remove("scrolled");
-  }
+    if (window.scrollY > 400) {
+        scrollUp.classList.add("scrolled");
+    } else {
+        scrollUp.classList.remove("scrolled");
+    }
 });
 scrollUp.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });
 
 
@@ -846,85 +940,86 @@ const slider = document.querySelector(".brotherhood__slider-wrapper");
 const slides = gsap.utils.toArray(".brotherhood__slide");
 const totalSlides = slides.length;
 const sliderTween = gsap.to(slider, {
-  xPercent: -50 * (totalSlides - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".brotherhood__inner",
-    pin: true,
-    scrub: true,
-    start: "top top",
-    end: () => "+=" + window.innerWidth * (totalSlides - 1),
-  }
+    xPercent: -50 * (totalSlides - 1),
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".brotherhood__inner",
+        pin: true,
+        scrub: true,
+        start: "top top",
+        end: () => "+=" + window.innerWidth * (totalSlides - 1),
+    }
 });
 const nextBtn = document.querySelector(".brotherhood__next");
 const prevBtn = document.querySelector(".brotherhood__prev");
 let currentSlide = 0;
+
 function goToSlide(index) {
-  currentSlide = Math.min(Math.max(index, 0), totalSlides - 1);
-  const scrollAmount = window.innerWidth * currentSlide + sliderTween.scrollTrigger.start;
-  window.scrollTo(0, scrollAmount);
+    currentSlide = Math.min(Math.max(index, 0), totalSlides - 1);
+    const scrollAmount = window.innerWidth * currentSlide + sliderTween.scrollTrigger.start;
+    window.scrollTo(0, scrollAmount);
 }
 nextBtn.addEventListener("click", () => {
-  goToSlide(currentSlide + 1);
+    goToSlide(currentSlide + 1);
 });
 prevBtn.addEventListener("click", () => {
-  goToSlide(currentSlide - 1);
+    goToSlide(currentSlide - 1);
 });
 slides.forEach(slide => {
-  const logo   = slide.querySelector(".brotherhood__logo");
-  const title  = slide.querySelector(".brotherhood__title");
-  const btn    = slide.querySelector(".brotherhood__btn");
-  const images = slide.querySelectorAll(".brotherhood__image");
+    const logo = slide.querySelector(".brotherhood__logo");
+    const title = slide.querySelector(".brotherhood__title");
+    const btn = slide.querySelector(".brotherhood__btn");
+    const images = slide.querySelectorAll(".brotherhood__image");
 
-  if (logo) {
-    gsap.to(logo, {
-      x: -800,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".brotherhood", 
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      }
-    });
-  }
+    if (logo) {
+        gsap.to(logo, {
+            x: -800,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".brotherhood",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+    }
 
-  if (title) {
-    gsap.to(title, {
-      x: -1000,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".brotherhood",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      }
-    });
-  }
+    if (title) {
+        gsap.to(title, {
+            x: -1000,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".brotherhood",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+    }
 
-  if (btn) {
-    gsap.to(btn, {
-      x: -1200,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".brotherhood",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      }
-    });
-  }
+    if (btn) {
+        gsap.to(btn, {
+            x: -1200,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".brotherhood",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+    }
 
-  images.forEach((img, idx) => {
-    gsap.to(img, {
-      x: idx % 2 === 0 ? 1000 : -1000,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".brotherhood",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      }
+    images.forEach((img, idx) => {
+        gsap.to(img, {
+            x: idx % 2 === 0 ? 1000 : -1000,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".brotherhood",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
     });
-  });
 });
