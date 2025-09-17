@@ -852,17 +852,6 @@ document.addEventListener("DOMContentLoaded", function() {
             toggleActions: "play none none reverse",
         }
     });
-    gsap.from(".contacts__btn", {
-        y: 50,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power3.out",
-        scrollTrigger: {
-            trigger: ".contacts__btn",
-            start: "top 90%",
-            toggleActions: "play none none reverse",
-        }
-    });
     gsap.from(".contacts__join", {
         y: 50,
         opacity: 0,
