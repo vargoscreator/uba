@@ -932,94 +932,94 @@ scrollUp.addEventListener("click", () => {
 
 
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-const slider = document.querySelector(".brotherhood__slider-wrapper");
-const slides = gsap.utils.toArray(".brotherhood__slide");
-const totalSlides = slides.length;
-const sliderTween = gsap.to(slider, {
-    xPercent: -50 * (totalSlides - 1),
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".brotherhood__inner",
-        pin: true,
-        scrub: true,
-        start: "top top",
-        end: () => "+=" + window.innerWidth * (totalSlides - 1),
-    }
-});
-const nextBtn = document.querySelector(".brotherhood__next");
-const prevBtn = document.querySelector(".brotherhood__prev");
-let currentSlide = 0;
+// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+// const slider = document.querySelector(".brotherhood__slider-wrapper");
+// const slides = gsap.utils.toArray(".brotherhood__slide");
+// const totalSlides = slides.length;
+// const sliderTween = gsap.to(slider, {
+//     xPercent: -50 * (totalSlides - 1),
+//     ease: "none",
+//     scrollTrigger: {
+//         trigger: ".brotherhood__inner",
+//         pin: true,
+//         scrub: true,
+//         start: "top top",
+//         end: () => "+=" + window.innerWidth * (totalSlides - 1),
+//     }
+// });
+// const nextBtn = document.querySelector(".brotherhood__next");
+// const prevBtn = document.querySelector(".brotherhood__prev");
+// let currentSlide = 0;
 
-function goToSlide(index) {
-    currentSlide = Math.min(Math.max(index, 0), totalSlides - 1);
-    const scrollAmount = window.innerWidth * currentSlide + sliderTween.scrollTrigger.start;
-    window.scrollTo(0, scrollAmount);
-}
-nextBtn.addEventListener("click", () => {
-    goToSlide(currentSlide + 1);
-});
-prevBtn.addEventListener("click", () => {
-    goToSlide(currentSlide - 1);
-});
-slides.forEach(slide => {
-    const logo = slide.querySelector(".brotherhood__logo");
-    const title = slide.querySelector(".brotherhood__title");
-    const btn = slide.querySelector(".brotherhood__btn");
-    const images = slide.querySelectorAll(".brotherhood__image");
+// function goToSlide(index) {
+//     currentSlide = Math.min(Math.max(index, 0), totalSlides - 1);
+//     const scrollAmount = window.innerWidth * currentSlide + sliderTween.scrollTrigger.start;
+//     window.scrollTo(0, scrollAmount);
+// }
+// nextBtn.addEventListener("click", () => {
+//     goToSlide(currentSlide + 1);
+// });
+// prevBtn.addEventListener("click", () => {
+//     goToSlide(currentSlide - 1);
+// });
+// slides.forEach(slide => {
+//     const logo = slide.querySelector(".brotherhood__logo");
+//     const title = slide.querySelector(".brotherhood__title");
+//     const btn = slide.querySelector(".brotherhood__btn");
+//     const images = slide.querySelectorAll(".brotherhood__image");
 
-    if (logo) {
-        gsap.to(logo, {
-            x: -800,
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".brotherhood",
-                start: "top top",
-                end: "bottom top",
-                scrub: true
-            }
-        });
-    }
+//     if (logo) {
+//         gsap.to(logo, {
+//             x: -800,
+//             ease: "none",
+//             scrollTrigger: {
+//                 trigger: ".brotherhood",
+//                 start: "top top",
+//                 end: "bottom top",
+//                 scrub: true
+//             }
+//         });
+//     }
 
-    if (title) {
-        gsap.to(title, {
-            x: -1000,
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".brotherhood",
-                start: "top top",
-                end: "bottom top",
-                scrub: true
-            }
-        });
-    }
+//     if (title) {
+//         gsap.to(title, {
+//             x: -1000,
+//             ease: "none",
+//             scrollTrigger: {
+//                 trigger: ".brotherhood",
+//                 start: "top top",
+//                 end: "bottom top",
+//                 scrub: true
+//             }
+//         });
+//     }
 
-    if (btn) {
-        gsap.to(btn, {
-            x: -1200,
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".brotherhood",
-                start: "top top",
-                end: "bottom top",
-                scrub: true
-            }
-        });
-    }
+//     if (btn) {
+//         gsap.to(btn, {
+//             x: -1200,
+//             ease: "none",
+//             scrollTrigger: {
+//                 trigger: ".brotherhood",
+//                 start: "top top",
+//                 end: "bottom top",
+//                 scrub: true
+//             }
+//         });
+//     }
 
-    images.forEach((img, idx) => {
-        gsap.to(img, {
-            x: idx % 2 === 0 ? 1000 : -1000,
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".brotherhood",
-                start: "top top",
-                end: "bottom top",
-                scrub: true
-            }
-        });
-    });
-});
+//     images.forEach((img, idx) => {
+//         gsap.to(img, {
+//             x: idx % 2 === 0 ? 1000 : -1000,
+//             ease: "none",
+//             scrollTrigger: {
+//                 trigger: ".brotherhood",
+//                 start: "top top",
+//                 end: "bottom top",
+//                 scrub: true
+//             }
+//         });
+//     });
+// });
 
 
 
