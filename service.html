@@ -111,38 +111,27 @@
     </header>
 
     <main class="main">
-        <section class="hero">
-            <div class="hero__slide-image hero__slide-image--one">
-                <img loading="eager" src="img/hero/man-1.webp" alt="">
+        <section class="hero hero-service">
+            <div class="container">
+                <div class="service__inner">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="index.html">Главная</a>
+                        </li>
+                        <li>
+                            <a class="active" href="service.html">Расписание тренировок</a>
+                        </li>
+                    </ul>
+                    <div class="service__content">
+                        <h1 class="service__title">Бокс</h1>
+                        <button class="service__btn btn">записаться на пробную тренировку</button>
+                    </div>
+                </div>
             </div>
-            <div class="hero__slide-image hero__slide-image--two">
-                <img loading="eager" src="img/hero/man-2.webp" alt="">
-            </div>
-            <div class="hero__slide-image hero__slide-image--three">
+            <div class="hero__slide-image hero__slide-image--three active">
                 <img loading="eager" src="img/hero/man-3.webp" alt="">
             </div>
             <div class="hero__inner">
-                <button class="hero__slider-prev btn-prev"></button>
-                <div class="hero__slider">
-                    <div class="swiper-wrapper">
-                        <div class="hero__slide swiper-slide">
-                            <div class="hero__slide-about">
-                                <div class="hero__slide-title-icon"><img loading="eager" src="img/uba.svg" alt=""></div>
-                                <div class="hero__slide-name-icon"><img loading="eager" src="img/united-boxing-academy.svg" alt=""></div>
-                            </div>
-                        </div>
-                        <div class="hero__slide swiper-slide">
-                            <div class="container">
-                                <div class="hero__slide-content">
-                                    <h1 class="hero__slide-title">Бокс</h1>
-                                    <button class="hero__slide-btn btn">записаться на пробную тренировку</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="hero__slider-next btn-next"></button>
-                <div class="hero__slider-pagination"></div>
                 <div class="hero__line">
                     <div class="hero__line-inner">
                         <span>welcome to United boxing academy</span>
@@ -282,33 +271,26 @@
             </div>
         </section>
 
-        <section class="about">
+        <section class="about about-service">
             <div class="about__bg">
                 <img loading="lazy "src="img/site-bg.webp" alt="">
             </div>
             <div class="container">
                 <div class="about__inner">
-                    <h2 class="about__title">Про United <span>Boxing Academy</span></h2>
+                    <h2 class="about__title">Бокс — это <span>контактный вид спорта</span></h2>
+                    <p class="about__name">в котором все решает точность, скорость и выносливость. Бой ведется исключительно руками, но при этом задействуется все тело: от ног до корпуса.</p>
                     <div class="about__content">
                         <div class="about__left">
                             <div class="about__image">
-                                <img loading="lazy "src="img/about/1.webp" alt="">
+                                <img loading="lazy "src="img/about/4.png" alt="">
                             </div>
-                            <p class="about__descr"><span>Это не просто боксерский зал — это братство, где лучшие тренеры Украины объединяют усилия, чтобы раскрыть ваш потенциал</span> </p>
-                            <div class="about__image">
-                                <img loading="lazy "src="img/about/2.webp" alt="">
-                            </div>
-                        </div>
-                        <h3 class="about__who">Кто <br>мы</h3>
-                        <div class="about__icon">
-                            <img loading="lazy "src="img/about/who.webp" alt="">
+                            <p class="about__descr"><span>Побеждает не тот, кто просто сильнее, а тот, кто умеет мыслить стратегически и сохранять хладнокровие. </span> </p>
                         </div>
                         <div class="about__right">
-                            <h3 class="about__united"><span>Объединенная</span> <span>Академия Бокса</span> <span> в Киеве</span></h3>
                             <div class="about__image">
-                                <img loading="lazy "src="img/about/3.webp" alt="">
+                                <img loading="lazy "src="img/about/5.png" alt="">
                             </div>
-                            <p class="about__descr about__descr-icon"><span>Здесь вы станете частью семьи, которая поддерживает, вдохновляет и стоит плечом к плечу с вами — на ринге и в жизни</span></p>
+                            <p class="about__descr about__descr-icon"><span>Это тренинг не только для тела, но и для характера — умение держать удар, фокусироваться и двигаться до конца.</span></p>
                             <p class="about__name">UBA — это мощь, дисциплина и жажда великих побед. Мы создаем не просто бойцов, а несгибаемых личностей, готовых сокрушать любые преграды, и добиться своих целей.</p>
                         </div>
                     </div>
@@ -316,221 +298,211 @@
             </div>
         </section>
 
-        <!-- <section class="brotherhood">
-                <div class="brotherhood__inner">
-                    <div class="brotherhood__bg">
-                        <img loading="lazy "src="img/Paper-Texture.webp" alt="">
-                    </div>
-                    <div class="brotherhood__buttons">
-                        <button class="brotherhood__prev">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="93" viewBox="0 0 50 93" fill="none">
-                                <path d="M49.7629 64.2345L21.411 46.168L49.7629 28.3458L49.7629 0.0253928L48.0862 0.0253927L0.0707993 33.7169L0.0707982 58.8634L48.0862 92.3107L49.7629 92.3107L49.7629 64.2345Z" fill="#303030"/>
-                            </svg>
-                        </button>
-                        <button class="brotherhood__next">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="51" height="94" viewBox="0 0 51 94" fill="none">
-                                <path d="M1.10644 28.8215L29.2517 47.2082L0.699558 64.7079L0.378478 93.0265L2.0551 93.0455L50.4494 59.9005L50.7345 34.7556L3.10138 0.766091L1.42476 0.747081L1.10644 28.8215Z" fill="#303030"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="brotherhood__slider">
-                        <div class="brotherhood__slider-wrapper">
-                            <div class="brotherhood__slide">
-                                <div class="brotherhood__logo">
-                                    <img loading="lazy "src="img/brotherhood/icon.svg" alt="">
-                                </div>
-                                <h3 class="brotherhood__title">Братство</h3>
-                                <a class="brotherhood__btn btn" href="#">присоединяйся!</a>
-                                <div class="brotherhood__images">
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/1.webp" alt="">
-                                    </div>
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/2.webp" alt="">
-                                    </div>
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/3.webp" alt="">
-                                    </div>
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/4.webp" alt="">
-                                    </div>
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/5.webp" alt="">
-                                    </div>
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/6.webp" alt="">
-                                    </div>
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/7.webp" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="brotherhood__slide">
-                                <div class="brotherhood__logo">
-                                    <img loading="lazy "src="img/brotherhood/icon.svg" alt="">
-                                </div>
-                                <h3 class="brotherhood__title">Братство </h3>
-                                <a class="brotherhood__btn btn" href="#">присоединяйся!</a>
-                                <div class="brotherhood__images">
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/2.webp" alt="">
-                                    </div>
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/1.webp" alt="">
-                                    </div>
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/4.webp" alt="">
-                                    </div>
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/3.webp" alt="">
-                                    </div>
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/5.webp" alt="">
-                                    </div>
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/6.webp" alt="">
-                                    </div>
-                                    <div class="brotherhood__image">
-                                        <img loading="lazy "src="img/brotherhood/7.webp" alt="">
-                                    </div>
-                                </div>
-                            </div>
+        <section class="recruitment recruitment-service">
+        <div class="recruitment__bg">
+            <img loading="lazy "src="img/site-bg.webp" alt="">
+        </div>
+            <div class="recruitment__blockSlider">
+                <button class="recruitment__slider-prev btn-prev"></button>
+                <div class="recruitment__slider">
+                    <div class="swiper-wrapper">
+                        <div class="recruitment__slide swiper-slide">
+                            <img src="img/blockSlider/1.png" alt="">
+                        </div>
+                        <div class="recruitment__slide swiper-slide">
+                            <img src="img/blockSlider/1.png" alt="">
+                        </div>
+                        <div class="recruitment__slide swiper-slide">
+                            <img src="img/blockSlider/1.png" alt="">
                         </div>
                     </div>
                 </div>
-        </section> -->
-
-        <section class="support">
-            <div class="support__line">
-                <div class="support__line-inner">
-                    <span>United Boxing Academy</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none">
-                        <path d="M0.193133 12.2805L12.301 19.7135L0.447357 27.445L0.647969 39.4116L1.35646 39.3997L21.4064 24.8235L21.2282 14.198L0.70274 0.405176L-0.00574996 0.417054L0.193133 12.2805Z" fill="#2D2D2D"/>
-                    </svg>
-                    <span>при поддержке Киевской Федерации бокса и К2 .</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none">
-                        <path d="M0.193133 12.2805L12.301 19.7135L0.447357 27.445L0.647969 39.4116L1.35646 39.3997L21.4064 24.8235L21.2282 14.198L0.70274 0.405176L-0.00574996 0.417054L0.193133 12.2805Z" fill="#2D2D2D"/>
-                    </svg>
-                    <span>United Boxing Academy</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none">
-                        <path d="M0.193133 12.2805L12.301 19.7135L0.447357 27.445L0.647969 39.4116L1.35646 39.3997L21.4064 24.8235L21.2282 14.198L0.70274 0.405176L-0.00574996 0.417054L0.193133 12.2805Z" fill="#2D2D2D"/>
-                    </svg>
-                    <span>при поддержке Киевской Федерации бокса и К2 .</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none">
-                        <path d="M0.193133 12.2805L12.301 19.7135L0.447357 27.445L0.647969 39.4116L1.35646 39.3997L21.4064 24.8235L21.2282 14.198L0.70274 0.405176L-0.00574996 0.417054L0.193133 12.2805Z" fill="#2D2D2D"/>
-                    </svg>
-                    <span>United Boxing Academy</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none">
-                        <path d="M0.193133 12.2805L12.301 19.7135L0.447357 27.445L0.647969 39.4116L1.35646 39.3997L21.4064 24.8235L21.2282 14.198L0.70274 0.405176L-0.00574996 0.417054L0.193133 12.2805Z" fill="#2D2D2D"/>
-                    </svg>
-                    <span>при поддержке Киевской Федерации бокса и К2 .</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none">
-                        <path d="M0.193133 12.2805L12.301 19.7135L0.447357 27.445L0.647969 39.4116L1.35646 39.3997L21.4064 24.8235L21.2282 14.198L0.70274 0.405176L-0.00574996 0.417054L0.193133 12.2805Z" fill="#2D2D2D"/>
-                    </svg>
-                    <span>United Boxing Academy</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none">
-                        <path d="M0.193133 12.2805L12.301 19.7135L0.447357 27.445L0.647969 39.4116L1.35646 39.3997L21.4064 24.8235L21.2282 14.198L0.70274 0.405176L-0.00574996 0.417054L0.193133 12.2805Z" fill="#2D2D2D"/>
-                    </svg>
-                    <span>при поддержке Киевской Федерации бокса и К2 .</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none">
-                        <path d="M0.193133 12.2805L12.301 19.7135L0.447357 27.445L0.647969 39.4116L1.35646 39.3997L21.4064 24.8235L21.2282 14.198L0.70274 0.405176L-0.00574996 0.417054L0.193133 12.2805Z" fill="#2D2D2D"/>
-                    </svg>
-                    <span>United Boxing Academy</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none">
-                        <path d="M0.193133 12.2805L12.301 19.7135L0.447357 27.445L0.647969 39.4116L1.35646 39.3997L21.4064 24.8235L21.2282 14.198L0.70274 0.405176L-0.00574996 0.417054L0.193133 12.2805Z" fill="#2D2D2D"/>
-                    </svg>
-                    <span>при поддержке Киевской Федерации бокса и К2 .</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="none">
-                        <path d="M0.193133 12.2805L12.301 19.7135L0.447357 27.445L0.647969 39.4116L1.35646 39.3997L21.4064 24.8235L21.2282 14.198L0.70274 0.405176L-0.00574996 0.417054L0.193133 12.2805Z" fill="#2D2D2D"/>
-                    </svg>
-                </div>
+                <button class="recruitment__slider-next btn-next"></button>
+                <div class="recruitment__slider-pagination"></div>
             </div>
             <div class="container">
-                <div class="support__inner">
-                    <div class="support__top">
-                        <div class="support__start">
-                            <h2 class="support__title">при поддержке</h2>
-                            <div class="support__icons">
-                                <div class="support__icon">
-                                    <img loading="lazy "src="img/support/1.webp" alt="">
-                                </div>
-                                <div class="support__icon">
-                                    <img loading="lazy "src="img/support/2.webp" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="support__content">
-                            <button class="support__slider-prev btn-prev"></button>
-                            <div class="support__slider">
-                                <div class="swiper-wrapper">
-                                    <div class="support__slide swiper-slide">
-                                        <img loading="lazy "src="img/support/slide.webp" alt="">
-                                    </div>
-                                    <div class="support__slide swiper-slide">
-                                        <img loading="lazy "src="img/support/slide.webp" alt="">
-                                    </div>
-                                    <div class="support__slide swiper-slide">
-                                        <img loading="lazy "src="img/support/slide.webp" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="support__slider-next btn-next"></button>
-                            <div class="support__slider-pagination"></div>
-                        </div>
-                    </div>
-                    <div class="support__bottom">
-                        <button class="support__btn btn">Записаться</button>
-                        <p class="support__can">YES. YOU. CAN.</p>
+                <div class="recruitment__inner">
+                    <h2 class="recruitment__title">Тренируйтесь в своем ритме</h2>
+                    <p class="recruitment__name">Пробное занятие — бесплатно</p>
+                    <div class="recruitment__select">
+                        <button class="recruitment__select-btn active" data-recruitment-price-btn="1">Пакеты тренировок <br>для взрослых</button>
+                        <button class="recruitment__select-btn" data-recruitment-price-btn="2">Детские тренировки <br>(для детей 4-14 лет)</button>
+                        <button class="recruitment__select-btn" data-recruitment-price-btn="3">Индивидуальные <br>тренировки</button>
+                        <button class="recruitment__select-btn" data-recruitment-price-btn="4">Индивидуальная сплит-<br>программа (2 человека)</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="management">
+        <section class="prices prices-service">
             <div class="container">
-                <div class="management__inner">
-                    <h2 class="management__title"><span>направления</span> <span>United Boxing Academy</span></h2>
-                    <div class="management__block">
-                        <a class="management__item" href="#">
-                            <div class="management__item-image">
-                                <img loading="lazy "src="img/management/1.webp" alt="">
+                <div class="prices__inner">
+                    <div class="prices__result active" data-price-result="1">
+                        <h2 class="prices__title"><span>Пакеты тренировок</span> <br><span>для взрослых</span></h2>
+                        <div class="prices__content">
+                            <div class="prices__image">
+                                <img src="img/prices/1.png" alt="">
                             </div>
-                            <h3 class="management__item-title">Бокс</h3>
-                        </a>
-                        <a class="management__item" href="#">
-                            <div class="management__item-image">
-                                <img loading="lazy "src="img/management/2.webp" alt="">
+                            <div class="prices__table">
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">1 занятие</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">350 грн</p>
+                                </div>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">8 занятий</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">2600 грн</p>
+                                    <p class="prices__table-descr">{ 325 грн за занятие }</p>
+                                </div>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">12 занятий</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">3500 грн</p>
+                                    <p class="prices__table-descr">{ 292 грн за занятие }</p>
+                                </div>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">24 занятия</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">6300 грн</p>
+                                    <p class="prices__table-descr">{ 263 грн за занятие }</p>
+                                </div>
+                                <button class="prices__table-btn btn">записаться на пробную тренировку</button>
                             </div>
-                            <h3 class="management__item-title">Кикбоксинг</h3>
-                        </a>
-                        <a class="management__item" href="#">
-                            <div class="management__item-image">
-                                <img loading="lazy "src="img/management/3.webp" alt="">
-                            </div>
-                            <h3 class="management__item-title">Тайский бокс</h3>
-                        </a>
-                        <a class="management__item" href="#">
-                            <div class="management__item-image">
-                                <img loading="lazy "src="img/management/4.webp" alt="">
-                            </div>
-                            <h3 class="management__item-title">CrossFit</h3>
-                        </a>
-                        <a class="management__item" href="#">
-                            <div class="management__item-image">
-                                <img loading="lazy "src="img/management/5.webp" alt="">
-                            </div>
-                            <h3 class="management__item-title">Combat Functional</h3>
-                        </a>
-                        <a class="management__item" href="#">
-                            <div class="management__item-image">
-                                <img loading="lazy "src="img/management/6.webp" alt="">
-                            </div>
-                            <h3 class="management__item-title">Силовой и базовый функционал</h3>
-                        </a>
+                        </div>
                     </div>
+
+                    <div class="prices__result" data-price-result="2">
+                        <h2 class="prices__title"><span>Детские тренировки</span> <br><span>для детей 4-14 лет</span></h2>
+                        <div class="prices__content">
+                            <div class="prices__image">
+                                <img src="img/prices/2.png" alt="">
+                            </div>
+                            <div class="prices__table">
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">1 занятие</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">300 грн</p>
+                                </div>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">8 занятий</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">2200 грн</p>
+                                    <p class="prices__table-descr">{ 275 грн за занятие }</p>
+                                </div>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">12 занятий</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">3600 грн</p>
+                                    <p class="prices__table-descr">{ 300 грн за занятие }</p>
+                                </div>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">24 занятия</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">5400 грн</p>
+                                    <p class="prices__table-descr">{ 225 грн за занятие }</p>
+                                </div>
+                                <button class="prices__table-btn btn">записаться на пробную тренировку</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prices__result" data-price-result="3">
+                        <h2 class="prices__title"><span>Индивидуальные</span> <br><span>тренировки</span></h2>
+                        <div class="prices__content">
+                            <div class="prices__image">
+                                <img src="img/prices/3.png" alt="">
+                            </div>
+                            <div class="prices__table">
+                                <h4 class="prices__table-info"> Тренер I категории:</h4>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">1 занятие</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">1200 грн</p>
+                                </div>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">10 занятий</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">9000 грн</p>
+                                </div>
+                                <h4 class="prices__table-info"> Тренер II категории:</h4>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">1 занятие</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">1000 грн</p>
+                                </div>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">10 занятий</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">7000 грн</p>
+                                </div>
+                                <h4 class="prices__table-info"> Тренер III категории:</h4>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">1 занятие</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">700 грн</p>
+                                </div>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">10 занятий</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">5000 грн</p>
+                                </div>
+                                <button class="prices__table-btn btn">записаться на пробную тренировку</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prices__result" data-price-result="4">
+                        <h2 class="prices__title"><span>Индивидуальная </span> <br><span>сплит-программа (2 человека)</span></h2>
+                        <div class="prices__content">
+                            <div class="prices__image">
+                                <img src="img/prices/4.png" alt="">
+                            </div>
+                            <div class="prices__table">
+                                <h4 class="prices__table-info"> Тренер I категории:</h4>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">1 занятие</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">1800 грн</p>
+                                </div>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">10 занятий</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">16200 грн</p>
+                                </div>
+                                <h4 class="prices__table-info"> Тренер II категории:</h4>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">1 занятие</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">1600 грн</p>
+                                </div>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">10 занятий</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">12600 грн</p>
+                                </div>
+                                <h4 class="prices__table-info"> Тренер III категории:</h4>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">1 занятие</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">1200 грн</p>
+                                </div>
+                                <div class="prices__table-item">
+                                    <p class="prices__table-num">10 занятий</p>
+                                    <span class="prices__table-span"></span>
+                                    <p class="prices__table-price">10800 грн</p>
+                                </div>
+                                <button class="prices__table-btn btn">записаться на пробную тренировку</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
+        
+
+
         
         <section class="schedule">
             <div class="schedule__bg">
@@ -554,14 +526,83 @@
             </div>
         </section>
 
-        <section class="trainer">
+        <section class="youget">
+            <div class="container">
+                <div class="youget__inner">
+                    <h2 class="youget__title">
+                        <span>ЧТо вы получите</span>
+                        <span>На тренировках?</span>
+                    </h2>
+                    <p class="youget__descr">Визуализация, работа с фокусом и дыханием — все это часть тренинга.</p>
+                    <p class="youget__descr"><mark>Только вы, тренер и результат:</mark></p>
+                    <div class="youget__block">
+                        <div class="youget__item">
+                            <div class="youget__item-image">
+                                <img src="img/youget/1.png" alt="">
+                            </div>
+                            <div class="youget__item-content">
+                                <p class="youget__item-num">01</p>
+                                <h3 class="youget__item-title">Ударная техника: джэб, кросс, апперкот</h3>
+                            </div>
+                        </div>
+                        <div class="youget__item">
+                            <div class="youget__item-image">
+                                <img src="img/youget/1.png" alt="">
+                            </div>
+                            <div class="youget__item-content">
+                                <p class="youget__item-num">02</p>
+                                <h3 class="youget__item-title">Комбинации, ритм, баланс</h3>
+                            </div>
+                        </div>
+                        <div class="youget__item">
+                            <div class="youget__item-image">
+                                <img src="img/youget/1.png" alt="">
+                            </div>
+                            <div class="youget__item-content">
+                                <p class="youget__item-num">03</p>
+                                <h3 class="youget__item-title">Работа на лапах и мешках</h3>
+                            </div>
+                        </div>
+                        <div class="youget__item">
+                            <div class="youget__item-image">
+                                <img src="img/youget/1.png" alt="">
+                            </div>
+                            <div class="youget__item-content">
+                                <p class="youget__item-num">04</p>
+                                <h3 class="youget__item-title">Реакция, тайминг, концентрация</h3>
+                            </div>
+                        </div>
+                        <div class="youget__item">
+                            <div class="youget__item-image">
+                                <img src="img/youget/1.png" alt="">
+                            </div>
+                            <div class="youget__item-content">
+                                <p class="youget__item-num">05</p>
+                                <h3 class="youget__item-title">Тренировка дыхания и выдержки</h3>
+                            </div>
+                        </div>
+                        <div class="youget__item">
+                            <div class="youget__item-image">
+                                <img src="img/youget/1.png" alt="">
+                            </div>
+                            <div class="youget__item-content">
+                                <p class="youget__item-num">06</p>
+                                <h3 class="youget__item-title">Спарринги по уровню <br>— от первых до профессиональных</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trainer trainer-service">
             <div class="trainer__bg">
                 <img loading="lazy "src="img/site-bg4.webp" alt="">
             </div>
             <div class="container">
                 <div class="trainer__inner">
                     <div class="trainer__top">
-                        <h2 class="trainer__title"><span>тренера</span> <span><img loading="lazy "src="img/uba-2.svg" alt=""></span></h2>
+                        <h2 class="trainer__title">Тренеры, которые формируют бойцов</h2>
                         <div class="trainer__about">
                             <h3 class="trainer__name">Чемпионы и сильные духом люди, за плечами которых — бой и победа</h3>
                             <p class="trainer__descr">Вы тренируетесь рядом с теми, кто знает, как стать сильнее, и помогает вам пройти этот путь. UBA — это зал, где чемпионы учат не с позиции силы, а с позиции уважения. Мы тренируем не по методичкам. Мы передаем опыт настоящих боев. И всегда рядом, когда вы делаете шаг вперед.</p>
@@ -772,101 +813,34 @@
                                 <p class="howit__item-num">{&nbsp;&nbsp;06&nbsp;&nbsp;}</p>
                                 <h3 class="howit__item-title">Постоянный контакт <br>с тренером</h3>
                             </div>
-                            <div class="howit__item">
-                                <p class="howit__item-num">{&nbsp;&nbsp;07&nbsp;&nbsp;}</p>
-                                <h3 class="howit__item-title">подготовка к соревнованиям</h3>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="feedback">
+        <section class="feedback feedback-service">
              <div class="feedback__bg">
                 <img loading="lazy "src="img/site-bg5.webp" alt="">
             </div>
             <div class="container">
                 <div class="feedback__inner">
-                    <h2 class="feedback__title">В UBA строится ваш путь. <span>Первый шаг — за вами!</span></h2>
-                    <p class="feedback__descr">Мы не даем пустых обещаний. Только честную работу, реальный прогресс и команду, которая рядом. </p>
+                    <h2 class="feedback__title">Присоединяйтесь к боксерскому <span>братству - UBA</span></h2>
+                    <p class="feedback__descr">Не ждите идеального момента — он уже здесь. Запишитесь на пробную тренировку и почувствуйте, каково быть частью братства UBA.</p>
                     <form class="feedback__form" action="#">
-                        <input class="feedback__form-input" type="text" name="name" placeholder="Ваше имя" required>
-                        <input class="feedback__form-input" type="tel" name="tel" placeholder="Телефон" required>
-                        <button class="feedback__form-send btn" type="submit">Записаться</button>
+                        <div class="feedback__form-box">
+                            <input class="feedback__form-input" type="text" name="name" required placeholder="Ваше имя">
+                            <input class="feedback__form-input" type="tel" name="name" required placeholder="Телефон">
+                            <input class="feedback__form-input" type="text" name="name" required placeholder="Убобный интервал занятий">
+                            <input class="feedback__form-input" type="text" name="name" required placeholder="Способ связи">
+                        </div>
+                        <button class="feedback__form-send btn" type="submit">Оставить заявку</button>
                     </form>
                 </div>
             </div>
         </section>
 
-        <section class="reviews">
-            <div class="reviews__bg">
-                <img loading="lazy "src="img/site-bg6.webp" alt="">
-            </div>
-            <div class="container">
-                <div class="reviews__inner">
-                    <h2 class="reviews__title">Отзывы <span>О нас говорят</span></h2>
-
-                    <div class="reviews__content">
-                        <p class="reviews__slider-number"><span>01</span> 03</p>
-                        <div class="reviews__slider">
-                            <div class="swiper-wrapper">
-                                <div class="reviews__slide swiper-slide">
-                                    <div class="reviews__slide-image">
-                                        <img loading="lazy "src="img/reviews/1.webp" alt="">
-                                    </div>
-                                    <div class="reviews__slide-content">
-                                        <h4 class="reviews__slide-name">Виталий кличко</h4>
-                                        <p class="reviews__slide-descr">Этот клуб произвел на меня отличное впечатление. Здесь есть всё необходимое для подготовки — современное оборудование, удобный зал и ринг. Особенно ценна работа тренеров, которые помогают спортсменам не только осваивать технику, но и воспитывают силу воли и характер. Уверен, что именно здесь будут расти будущие чемпионы.</p>
-                                    </div>
-                                </div>
-                                <div class="reviews__slide swiper-slide">
-                                    <div class="reviews__slide-image">
-                                        <img loading="lazy "src="img/reviews/1.webp" alt="">
-                                    </div>
-                                    <div class="reviews__slide-content">
-                                        <h4 class="reviews__slide-name">Виталий кличко</h4>
-                                        <p class="reviews__slide-descr">Этот клуб произвел на меня отличное впечатление. Здесь есть всё необходимое для подготовки — современное оборудование, удобный зал и ринг. Особенно ценна работа тренеров, которые помогают спортсменам не только осваивать технику, но и воспитывают силу воли и характер. Уверен, что именно здесь будут расти будущие чемпионы.</p>
-                                    </div>
-                                </div>
-                                <div class="reviews__slide swiper-slide">
-                                    <div class="reviews__slide-image">
-                                        <img loading="lazy "src="img/reviews/1.webp" alt="">
-                                    </div>
-                                    <div class="reviews__slide-content">
-                                        <h4 class="reviews__slide-name">Виталий кличко</h4>
-                                        <p class="reviews__slide-descr">Этот клуб произвел на меня отличное впечатление. Здесь есть всё необходимое для подготовки — современное оборудование, удобный зал и ринг. Особенно ценна работа тренеров, которые помогают спортсменам не только осваивать технику, но и воспитывают силу воли и характер. Уверен, что именно здесь будут расти будущие чемпионы.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reviews__bottom">
-                        <button class="reviews__slider-prev">
-                            <div class="reviews-btn-icon btn-prev-2"></div>
-                            <div class="reviews-btn-content">
-                                <div class="reviews-btn-image">
-                                    <img loading="lazy "src="img/reviews/2.webp" alt="">
-                                </div>
-                                <span class="reviews-btn-name">Александр усик</span>
-                            </div>
-                        </button>
-
-                        <button class="reviews__slider-next">
-                            <div class="reviews-btn-content">
-                                <span class="reviews-btn-name">Василь ломаченко</span>
-                                <div class="reviews-btn-image">
-                                    <img loading="lazy "src="img/reviews/3.webp" alt="">
-                                </div>
-                            </div>
-                            <div class="reviews-btn-icon btn-next-2"></div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="faq">
+        <section class="faq faq-service">
             <p class="faq__bg-title">
                 <span>Frequently </span>
                 <span>asked</span>

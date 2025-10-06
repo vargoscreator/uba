@@ -1,53 +1,55 @@
 window.scrollTo(0, 0)
 document.addEventListener("DOMContentLoaded", function() {
-    const heroSection = document.querySelector(".hero");
+    if (document.querySelector(".hero")) {
+        const heroSection = document.querySelector(".hero");
 
-    setTimeout(() => {
-        heroSection.classList.add("animated");
-    }, 100);
-    setTimeout(() => {
-        heroSection.classList.add("animated-second");
-    }, 500);
+        setTimeout(() => {
+            heroSection.classList.add("animated");
+        }, 100);
+        setTimeout(() => {
+            heroSection.classList.add("animated-second");
+        }, 500);
 
 
-    let swiper = new Swiper(".hero__slider", {
-        loop: false,
-        spaceBetween: 10,
-        slidesPerView: 1,
-        speed: 800,
-        allowTouchMove: false,
-        navigation: {
-            nextEl: ".hero__slider-next",
-            prevEl: ".hero__slider-prev",
-        },
-        pagination: {
-            el: ".hero__slider-pagination",
-            clickable: true,
-        },
-        on: {
-            slideChange: function() {
-                if (this.activeIndex === 0) {
-                    setTimeout(() => {
-                        heroSection.classList.add("animated");
-                    }, 800);
-                    setTimeout(() => {
-                        heroSection.classList.add("animated-second");
-                    }, 1000);
-                    heroSection.classList.remove("second-slide");
-                } else if (this.activeIndex === 1) {
-                    heroSection.classList.add("second-slide");
-                    setTimeout(() => {
-                        heroSection.classList.remove("animated");
-                    }, 100);
-                    setTimeout(() => {
-                        heroSection.classList.remove("animated-second");
-                    }, 100);
-                } else {
-                    heroSection.classList.remove("animated", "second-slide");
-                }
+        let swiper = new Swiper(".hero__slider", {
+            loop: false,
+            spaceBetween: 10,
+            slidesPerView: 1,
+            speed: 800,
+            allowTouchMove: false,
+            navigation: {
+                nextEl: ".hero__slider-next",
+                prevEl: ".hero__slider-prev",
             },
-        },
-    });
+            pagination: {
+                el: ".hero__slider-pagination",
+                clickable: true,
+            },
+            on: {
+                slideChange: function() {
+                    if (this.activeIndex === 0) {
+                        setTimeout(() => {
+                            heroSection.classList.add("animated");
+                        }, 800);
+                        setTimeout(() => {
+                            heroSection.classList.add("animated-second");
+                        }, 1000);
+                        heroSection.classList.remove("second-slide");
+                    } else if (this.activeIndex === 1) {
+                        heroSection.classList.add("second-slide");
+                        setTimeout(() => {
+                            heroSection.classList.remove("animated");
+                        }, 100);
+                        setTimeout(() => {
+                            heroSection.classList.remove("animated-second");
+                        }, 100);
+                    } else {
+                        heroSection.classList.remove("animated", "second-slide");
+                    }
+                },
+            },
+        });
+    }
 
     let supportSwiper = new Swiper(".support__slider", {
         loop: false,
@@ -179,6 +181,10 @@ document.addEventListener("DOMContentLoaded", function() {
             speed: 0.15
         },
         {
+            selector: ".about__name",
+            speed: 0.15
+        },
+        {
             selector: ".about__left .about__image:nth-of-type(1)",
             speed: 0.3
         },
@@ -229,21 +235,22 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    const aboutName = document.querySelector(".about__name");
-    const aboutNameText = aboutName.textContent;
-    aboutName.textContent = "";
-    gsap.to(aboutName, {
-        text: aboutNameText,
-        duration: 2,
-        ease: "none",
-        scrollTrigger: {
-            trigger: aboutName,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-        }
+    document.querySelectorAll(".about__name").forEach((aboutName) => {
+        const aboutNameText = aboutName.textContent;
+        aboutName.textContent = "";
+
+        gsap.to(aboutName, {
+            text: aboutNameText,
+            duration: 2,
+            ease: "none",
+            scrollTrigger: {
+                trigger: aboutName,
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
     });
 
-    gsap.registerPlugin(ScrollTrigger);
 
     document.querySelectorAll(".btn").forEach(btn => {
         ScrollTrigger.create({
@@ -930,99 +937,6 @@ scrollUp.addEventListener("click", () => {
 });
 
 
-
-
-// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-// const slider = document.querySelector(".brotherhood__slider-wrapper");
-// const slides = gsap.utils.toArray(".brotherhood__slide");
-// const totalSlides = slides.length;
-// const sliderTween = gsap.to(slider, {
-//     xPercent: -50 * (totalSlides - 1),
-//     ease: "none",
-//     scrollTrigger: {
-//         trigger: ".brotherhood__inner",
-//         pin: true,
-//         scrub: true,
-//         start: "top top",
-//         end: () => "+=" + window.innerWidth * (totalSlides - 1),
-//     }
-// });
-// const nextBtn = document.querySelector(".brotherhood__next");
-// const prevBtn = document.querySelector(".brotherhood__prev");
-// let currentSlide = 0;
-
-// function goToSlide(index) {
-//     currentSlide = Math.min(Math.max(index, 0), totalSlides - 1);
-//     const scrollAmount = window.innerWidth * currentSlide + sliderTween.scrollTrigger.start;
-//     window.scrollTo(0, scrollAmount);
-// }
-// nextBtn.addEventListener("click", () => {
-//     goToSlide(currentSlide + 1);
-// });
-// prevBtn.addEventListener("click", () => {
-//     goToSlide(currentSlide - 1);
-// });
-// slides.forEach(slide => {
-//     const logo = slide.querySelector(".brotherhood__logo");
-//     const title = slide.querySelector(".brotherhood__title");
-//     const btn = slide.querySelector(".brotherhood__btn");
-//     const images = slide.querySelectorAll(".brotherhood__image");
-
-//     if (logo) {
-//         gsap.to(logo, {
-//             x: -800,
-//             ease: "none",
-//             scrollTrigger: {
-//                 trigger: ".brotherhood",
-//                 start: "top top",
-//                 end: "bottom top",
-//                 scrub: true
-//             }
-//         });
-//     }
-
-//     if (title) {
-//         gsap.to(title, {
-//             x: -1000,
-//             ease: "none",
-//             scrollTrigger: {
-//                 trigger: ".brotherhood",
-//                 start: "top top",
-//                 end: "bottom top",
-//                 scrub: true
-//             }
-//         });
-//     }
-
-//     if (btn) {
-//         gsap.to(btn, {
-//             x: -1200,
-//             ease: "none",
-//             scrollTrigger: {
-//                 trigger: ".brotherhood",
-//                 start: "top top",
-//                 end: "bottom top",
-//                 scrub: true
-//             }
-//         });
-//     }
-
-//     images.forEach((img, idx) => {
-//         gsap.to(img, {
-//             x: idx % 2 === 0 ? 1000 : -1000,
-//             ease: "none",
-//             scrollTrigger: {
-//                 trigger: ".brotherhood",
-//                 start: "top top",
-//                 end: "bottom top",
-//                 scrub: true
-//             }
-//         });
-//     });
-// });
-
-
-
 const headerBurger = document.querySelector('.header__burger');
 const headerMenu = document.querySelector('.header__menu');
 const headerMenuList = headerMenu.querySelector('ul');
@@ -1043,3 +957,406 @@ headerMenuList.querySelectorAll('a').forEach(link => {
         headerMenu.classList.remove('active');
     });
 });
+
+
+gsap.fromTo(".timetable__title", {
+    x: "-100%",
+    opacity: 0
+}, {
+    x: "0%",
+    opacity: 1,
+    scrollTrigger: {
+        trigger: ".timetable__inner",
+        start: "top 120%",
+        end: "bottom-=100%",
+        scrub: true,
+        toggleActions: "play none none reverse"
+    }
+});
+
+
+
+let supportSwiper = new Swiper(".recruitment__slider", {
+    loop: false,
+    spaceBetween: 0,
+    slidesPerView: 1,
+    speed: 800,
+    navigation: {
+        nextEl: ".recruitment__slider-next",
+        prevEl: ".recruitment__slider-prev",
+    },
+    pagination: {
+        el: ".recruitment__slider-pagination",
+        clickable: true,
+    },
+});
+
+document.querySelectorAll('.heroBanner__title > span').forEach(wrapper => {
+    const text = wrapper.textContent;
+    wrapper.textContent = '';
+    text.split('').forEach(char => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        wrapper.appendChild(span);
+    });
+});
+const tl = gsap.timeline();
+tl.to('.heroBanner__title span span', {
+    y: 0,
+    opacity: 1,
+    duration: 0.4,
+    stagger: 0.03,
+    ease: 'power4.out'
+});
+tl.fromTo('.heroBanner__name', {
+    y: 30,
+    opacity: 0
+}, {
+    y: 0,
+    opacity: 1,
+    duration: 0.5,
+    ease: 'power4.out'
+});
+tl.fromTo('.heroBanner__descr', {
+    y: 30,
+    opacity: 0
+}, {
+    y: 0,
+    opacity: 1,
+    duration: 0.5,
+    ease: 'power4.out'
+});
+gsap.from(".heroBanner__image", {
+    x: 200,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".heroBanner__inner",
+        start: "top 90%",
+        toggleActions: "play none none reverse",
+    }
+});
+
+gsap.from(".heroBanner__about-title", {
+    x: 200,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".heroBanner__about",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+    }
+});
+
+
+gsap.from(".heroBanner__about-descr", {
+    x: -50,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power2.out",
+    stagger: 0.15,
+    scrollTrigger: {
+        trigger: ".heroBanner__about",
+        start: "top 40%",
+        toggleActions: "play none none reverse"
+    }
+});
+
+
+
+gsap.fromTo(".specialize__title", {
+    x: "-100%",
+    opacity: 0
+}, {
+    x: "0%",
+    opacity: 1,
+    scrollTrigger: {
+        trigger: ".specialize__inner",
+        start: "top 100%",
+        end: "bottom-=100%",
+        scrub: true,
+        toggleActions: "play none none reverse"
+    }
+});
+gsap.fromTo(".specialize__descr", {
+    x: "100%",
+    opacity: 0
+}, {
+    x: "0%",
+    opacity: 1,
+    scrollTrigger: {
+        trigger: ".specialize__inner",
+        start: "top 120%",
+        end: "bottom-=100%",
+        scrub: true,
+        toggleActions: "play none none reverse"
+    }
+});
+
+gsap.utils.toArray(".specialize__item").forEach((item) => {
+    gsap.fromTo(item, {
+        y: 100,
+        opacity: 0
+    }, {
+        y: 0,
+        opacity: 1,
+        ease: "none",
+        scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            end: "top 40%",
+            scrub: true
+        }
+    });
+});
+
+
+
+gsap.from(".recruitment__blockSlider", {
+    y: 200,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".recruitment__blockSlider",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+    }
+});
+
+gsap.from(".recruitment__title", {
+    y: 100,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".recruitment__inner",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+    }
+});
+gsap.from(".recruitment__descr", {
+    y: 100,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".recruitment__inner",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+    }
+});
+gsap.from(".recruitment__block", {
+    y: 100,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".recruitment__inner",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+    }
+});
+gsap.from(".recruitment__name", {
+    y: 100,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".recruitment__inner",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+    }
+});
+
+
+gsap.utils.toArray('.prices__title').forEach(title => {
+    const firstSpan = title.querySelector('span:first-child');
+    const lastSpan = title.querySelector('span:last-child');
+
+    if (firstSpan && lastSpan) {
+        gsap.fromTo(firstSpan, {
+            x: "-100%",
+            opacity: 0
+        }, {
+            x: "0%",
+            opacity: 1,
+            scrollTrigger: {
+                trigger: title,
+                start: "top 120%",
+                end: "bottom-=100%",
+                scrub: true,
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        gsap.fromTo(lastSpan, {
+            x: "100%",
+            opacity: 0
+        }, {
+            x: "0%",
+            opacity: 1,
+            scrollTrigger: {
+                trigger: title,
+                start: "top 120%",
+                end: "bottom-=90%",
+                scrub: true,
+                toggleActions: "play none none reverse"
+            }
+        });
+    }
+});
+
+
+gsap.utils.toArray('.prices__result').forEach(result => {
+    const image = result.querySelector('.prices__image');
+    if (image) {
+        gsap.fromTo(image, {
+            y: 50,
+            opacity: 0
+        }, {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: result,
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+    }
+
+    const infos = result.querySelectorAll('.prices__table-info');
+    gsap.fromTo(infos, {
+        y: 30,
+        opacity: 0
+    }, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 0.6,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: result,
+            start: "top 20%",
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    const items = result.querySelectorAll('.prices__table-item');
+    gsap.fromTo(items, {
+        y: 30,
+        opacity: 0
+    }, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.15,
+        duration: 0.5,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: result,
+            start: "top 20%",
+            toggleActions: "play none none reverse"
+        }
+    });
+});
+
+document.querySelectorAll('.heroBanner__price-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-price-btn');
+        const targetBlock = document.querySelector(`.prices__result[data-price-result="${targetId}"]`);
+        
+        if (targetBlock) {
+            const topOffset = 100;
+            const elementPosition = targetBlock.getBoundingClientRect().top;
+            const offsetPosition = window.scrollY + elementPosition - topOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.recruitment__select-btn');
+  const results = document.querySelectorAll('.prices__result');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const price = button.getAttribute('data-recruitment-price-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      results.forEach(result => result.classList.remove('active'));
+      button.classList.add('active');
+      document.querySelector(`.prices__result[data-price-result="${price}"]`)?.classList.add('active');
+    });
+  });
+});
+
+
+gsap.fromTo(".youget__title span:first-child", {
+        x: "-100%",
+        opacity: 0
+    }, {
+        x: "0%",
+        opacity: 1,
+        scrollTrigger: {
+            trigger: ".youget__inner",
+            start: "top 120%",
+            end: "bottom-=100%",
+            scrub: true,
+            toggleActions: "play none none reverse",
+        }
+    });
+    gsap.fromTo(".youget__title span:last-child", {
+        x: "100%",
+        opacity: 0
+    }, {
+        x: "0%",
+        opacity: 1,
+        scrollTrigger: {
+            trigger: ".youget__inner",
+            start: "top 120%",
+            end: "bottom-=90%",
+            toggleActions: "play none none reverse",
+            scrub: true
+        }
+    });
+
+gsap.utils.toArray(".youget__descr").forEach((elem, i) => {
+    gsap.from(elem, {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        delay: i * 0.2,
+        scrollTrigger: {
+            trigger: elem,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+        }
+    });
+});
+
+
+document.querySelectorAll(".youget__item").forEach((item, index) => {
+    const fromX = index % 2 === 0 ? -150 : 150;
+    gsap.from(item, {
+      x: fromX,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 20%",
+        toggleActions: "play none none reverse", 
+      }
+    });
+  });
