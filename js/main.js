@@ -51,20 +51,34 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    let supportSwiper = new Swiper(".support__slider", {
-        loop: false,
-        spaceBetween: 10,
-        slidesPerView: 1,
-        speed: 800,
-        navigation: {
-            nextEl: ".support__slider-next",
-            prevEl: ".support__slider-prev",
-        },
-        pagination: {
-            el: ".support__slider-pagination",
-            clickable: true,
-        },
-    });
+    if(document.querySelector('.support__slider')){
+        const currentSlideEl = document.querySelector('.support__slides-num .current-slide');
+        const totalSlidesEl = document.querySelector('.support__slides-num .total-slides');
+        let supportSwiper = new Swiper(".support__slider", {
+            loop: false,
+            spaceBetween: 10,
+            slidesPerView: 1,
+            speed: 800,
+            navigation: {
+                nextEl: ".support__slides-next",
+                prevEl: ".support__slides-prev",
+            },
+        });
+        function updateSliderCounter(swiperInstance) {
+            if (currentSlideEl) {
+                currentSlideEl.textContent = swiperInstance.activeIndex + 1;
+            }
+        }
+        if (totalSlidesEl) {
+            totalSlidesEl.textContent = supportSwiper.slides.length;
+        }
+        supportSwiper.on('slideChange', function () {
+            updateSliderCounter(this);
+        });
+        updateSliderCounter(supportSwiper);
+    }
+
+
     let reviewsSwiper = new Swiper(".reviews__slider", {
         loop: false,
         spaceBetween: 10,
@@ -346,45 +360,35 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    gsap.fromTo(".trainer__title span:first-child", {
+    gsap.fromTo(".trainer__title", {
         x: "-100%",
         opacity: 0
     }, {
         x: "0%",
         opacity: 1,
+        duration: 1,
+        ease: "power3.out",
         scrollTrigger: {
-            trigger: ".trainer__inner",
-            start: "top 120%",
-            end: "bottom-=100%",
-            scrub: true,
-            toggleActions: "play none none reverse",
-        }
-    });
-    gsap.fromTo(".trainer__title span:last-child", {
-        x: "100%",
-        opacity: 0
-    }, {
-        x: "0%",
-        opacity: 1,
-        scrollTrigger: {
-            trigger: ".trainer__inner",
-            start: "top 120%",
-            end: "bottom-=90%",
+            trigger: ".trainer__title",
+            start: "top 90%",
             toggleActions: "play none none reverse",
             scrub: true
         }
     });
 
-    gsap.from(".trainer__can", {
-        scale: 2,
-        opacity: 0,
-        rotation: -15,
-        duration: 0.4,
-        ease: "back.out(3)",
+    gsap.fromTo(".trainer__title span", {
+        x: "200%",
+        opacity: 0
+    }, {
+        x: "0%",
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
         scrollTrigger: {
-            trigger: ".trainer__can",
-            start: "top 30%",
-            toggleActions: "play none none reverse"
+            trigger: ".trainer__title",
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+            scrub: true
         }
     });
 
@@ -511,6 +515,33 @@ document.addEventListener("DOMContentLoaded", function() {
             scrollTrigger: {
                 trigger: el,
                 start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+    });
+
+    document.querySelectorAll(".trainer__can span").forEach(el => {
+        const text = el.textContent;
+        el.textContent = "";
+        text.split("").forEach(char => {
+            const span = document.createElement("span");
+            span.textContent = char;
+            span.style.display = "inline-block";
+            el.appendChild(span);
+        });
+
+        gsap.fromTo(el.querySelectorAll("span"), {
+            opacity: 0,
+            y: 20
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 0.05,
+            ease: "power1.out",
+            stagger: 0.05,
+            scrollTrigger: {
+                trigger: el,
+                start: "top 90%",
                 toggleActions: "play none none reverse"
             }
         });
@@ -782,7 +813,7 @@ document.addEventListener("DOMContentLoaded", function() {
         scrollTrigger: {
             trigger: ".contacts__mountain",
             start: "top 30%",
-            end: "bottom 100%",
+            end: "bottom 10%",
             scrub: true,
         }
     });
