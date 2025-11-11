@@ -1055,6 +1055,17 @@ document.addEventListener("DOMContentLoaded", function() {
             toggleActions: "play none none reverse",
         }
     });
+    gsap.from(".trainer__top-choose", {
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".trainer__inner",
+            start: "top 50%",
+            toggleActions: "play none none reverse",
+        }
+    });
     
 
 
@@ -1600,3 +1611,20 @@ menuBtn.forEach(element => {
     });
 });
 
+
+
+
+const select = document.querySelector(".trainer__top-select");
+const selected = select.querySelector(".trainer-selected");
+const choose = select.querySelector(".trainer-choose");
+selected.addEventListener("click", (e) => {
+  e.stopPropagation();
+  choose.classList.toggle("active");
+  selected.classList.toggle("active");
+});
+document.addEventListener("click", (e) => {
+  if (!select.contains(e.target)) {
+    choose.classList.remove("active");
+    selected.classList.remove("active");
+  }
+});

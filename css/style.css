@@ -2344,8 +2344,118 @@ mark{
     right: 2vw;
     text-wrap: nowrap;
 }
-.trainer-info{
-    
+.trainer-info .trainer__top{
+    align-items: start;
+    flex-direction: row;
+    gap: 1.042vw;
+    justify-content: space-between;
+    max-width: 77.5vw;
+}
+.trainer-info .trainer__title{
+    font-size: 8.333vw;
+    line-height: 8.333vw;
+}
+.trainer__top-content{
+    max-width: 39.948vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.604vw;
+    justify-content: end;
+    margin-top: 12.5vw;
+}
+.trainer__top-choose{
+    display: flex;
+    align-items: center;
+    gap: 0.885vw;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+.trainer__top-choose::before{
+    content: '';
+    position: absolute;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='222' height='120' viewBox='0 0 222 120' fill='none'%3E%3Cpath d='M67.5001 7.31768e-05L110.935 68.1627L153.782 6.56338e-05L221.869 5.96815e-05L221.869 4.03118L140.869 119.468L80.4131 119.468L0.000324191 4.0312L0.000323838 7.90778e-05L67.5001 7.31768e-05Z' fill='%23F2F302'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 11.556vw;
+    height: 6.222vw;
+    left: 2.135vw;
+    top: -8.542vw;
+}
+.trainer__top-name{
+    color: #FFF;
+    font-size: 2.5vw;
+    font-weight: 500;
+    line-height: 1.458vw; /* 58.333% */
+    text-transform: uppercase;
+}
+.trainer__top-select{
+    position: relative;
+    border: 0.052vw solid #000;
+    background: #2C2C2C;
+    width: 100%;
+    max-width: 20.833vw;
+}
+.trainer-choose{
+    position: absolute;
+    top: calc(100% + 0.521vw);
+    left: 0;
+    right: 0;
+    max-height: 15.625vw;
+    overflow: auto;
+    border: 0.052vw solid #000;
+    background: #2C2C2C;
+    z-index: 10;
+    display: none;
+    flex-direction: column;
+}
+.trainer-selected,
+.trainer-choose a{
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.781vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25vw; /* 160% */
+    min-height: 3.906vw;
+    width: 100%;
+    padding: 1.042vw 1.302vw;
+    display: flex;
+    align-items: center;
+    border: 0.052vw solid #000;
+}
+.trainer-choose a:hover{
+    background-color: #000000;
+}
+.trainer-selected{
+    cursor: pointer;
+    gap: 0.521vw;
+    justify-content: space-between;
+}
+.trainer-selected::after{
+    content: '';
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='39' height='21' viewBox='0 0 39 21' fill='none'%3E%3Cpath d='M27.1367 5.33596e-05L19.4543 11.9819L11.9704 5.33596e-05H0.00251247L-0.000307281 0.708657L14.1566 21.0005H24.7833L38.9986 0.708657L39.0014 5.33596e-05H27.1367Z' fill='%23F2F302'/%3E%3C/svg%3E");
+    width: 2.031vw;
+    height: 1.094vw;
+}
+.trainer-choose a{
+    display: flex;
+    align-items: center;
+    padding: 0.521vw;
+}
+.trainer-selected.active + .trainer-choose{
+    display: flex;
+}
+.trainer-info .trainer__can{
+    top: -7.813vw;
+    bottom: initial;
+    right: -1.042vw;
 }
 @media (max-width: 768px) {
     .trainer{
@@ -2476,6 +2586,66 @@ mark{
         z-index: 20;
         width: 284.998px;
         height: 52.997px;
+    }
+
+    .trainer-info .trainer__title{
+        font-size: 60px;
+        line-height: 60px;
+    }
+    .trainer-info .trainer__top{
+        flex-direction: column;
+    }
+    .trainer__top-content {
+        max-width: 100%;
+        gap: 30px;
+        margin-top: 90px;
+    }
+    .trainer__top-choose{
+        gap: 17px;
+        flex-direction: column;
+        align-items: start;
+    }
+    .trainer__top-choose::before {
+        width: 61.869px;
+        height: 39.468px;
+        left: 41px;
+        top: -54px;
+    }
+    .trainer__top-name{
+        font-size: 30px;
+        line-height: normal;
+    }
+    .trainer__top-select{
+        border: 1px solid #000;
+        max-width: 400px;
+    }
+    .trainer-choose{
+        top: calc(100% + 10px);
+        max-height: 300px;
+        border: 1px solid #000;
+    }
+    .trainer-selected,
+    .trainer-choose a{
+        font-size: 15px;
+        line-height: 24px;
+        min-height: 45px;
+        padding: 20px 25px;
+        border: 1px solid #000;
+    }
+    .trainer-selected{
+        gap: 10px;
+    }
+    .trainer-selected::after{
+        width: 39px;
+        height: 21px;
+    }
+    .trainer-choose a{
+        padding: 20px;
+    }
+    .trainer-info .trainer__can {
+        top: initial;
+        right: initial;
+        bottom: -150px;
     }
 }
 /* howit */
