@@ -170,6 +170,25 @@ document.addEventListener("DOMContentLoaded", function() {
         },
     });
 
+    let trenersSlider = new Swiper(".treners__slider", {
+        loop: false,
+        spaceBetween: 127,
+        slidesPerView: 'auto',
+        speed: 800,
+        navigation: {
+            nextEl: ".treners__next",
+            prevEl: ".treners__prev",
+        },
+        pagination: {
+            el: '.treners__count',
+            type: 'custom',
+            renderCustom: function (swiper, current, total) {
+                let totalSlides = (total < 10) ? `0${total}` : total; 
+                return `${current} <span>/${totalSlides}</span>`;
+            }
+        },
+    });
+
 
 
     gsap.registerPlugin(ScrollTrigger);
@@ -604,6 +623,33 @@ document.addEventListener("DOMContentLoaded", function() {
             scrollTrigger: {
                 trigger: el,
                 start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+    });
+
+    document.querySelectorAll(".treners__our span").forEach(el => {
+        const text = el.textContent;
+        el.textContent = "";
+        text.split("").forEach(char => {
+            const span = document.createElement("span");
+            span.textContent = char;
+            span.style.display = "inline-block";
+            el.appendChild(span);
+        });
+
+        gsap.fromTo(el.querySelectorAll("span"), {
+            opacity: 0,
+            y: 20
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 0.05,
+            ease: "power1.out",
+            stagger: 0.05,
+            scrollTrigger: {
+                trigger: el,
+                start: "top 60%",
                 toggleActions: "play none none reverse"
             }
         });
@@ -1480,6 +1526,58 @@ gsap.from(".youget__nav", {
 
 
 document.querySelectorAll(".youget__slide").forEach((item, index) => {
+    gsap.from(item, {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 80%",
+        toggleActions: "play none none reverse", 
+      }
+    });
+});
+
+gsap.fromTo(".treners__title", {
+        x: "-100%",
+        opacity: 0
+    }, {
+        x: "0%",
+        opacity: 1,
+        scrollTrigger: {
+            trigger: ".treners__top",
+            start: "top 120%",
+            end: "bottom-=90%",
+            scrub: true,
+            toggleActions: "play none none reverse"
+        }
+});
+gsap.from(".treners__descr", {
+    y: 100,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".treners__top",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+    }
+});
+
+gsap.from(".treners__nav", {
+    y: 100,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".treners__bottom",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+    }
+});
+
+document.querySelectorAll(".treners__slide").forEach((item, index) => {
     gsap.from(item, {
       y: 100,
       opacity: 0,

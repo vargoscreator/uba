@@ -1532,22 +1532,22 @@ mark{
     }
     .aboutserv__name{
         margin-top: 20px;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 115%; /* 36.806px */
         max-width: 100%;
         margin-left: 0;
     }
     .aboutserv__descr{
-        font-size: 18px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 18px;
     }
     .aboutserv__descr span::before{
-        font-size: 18px;
+        font-size: 16px;
         top: -6.01px;
         left: -16.992px;
     }
     .aboutserv__descr span::after{
-        font-size: 18px;
+        font-size: 16px;
         bottom: -3.994px;
         right: 56.006px;
     }
@@ -1600,7 +1600,7 @@ mark{
     }
     .aboutserv__info{
         margin-top: 10px;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 115%; /* 36.806px */
         max-width: 100%;
     }
@@ -5847,7 +5847,7 @@ mark{
     }
     .youget::after{
         top: calc(100% - 19.2px);
-        height: 191.002px;
+        height: 71.002px;
     }
     .youget__inner::before {
         width: 571.411px;
@@ -6199,8 +6199,332 @@ mark{
 
 
 
-.treners{
+.treners {
+    padding: 7vw 0 10vw;
+    background-image: url('../img/site-bg.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.treners::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    background-image: url('../img/texture-bg.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 49.519vw;
+    height: 50.537vw;
+    transform: rotate(42.079deg);
+    top: -4.792vw;
+    right: -27.552vw;
+    pointer-events: none;
+}
+.treners .howit__line{
+    transform: rotate(-1.514deg);
+    top: -11.417vw;
+}
+.treners__title{
+    font-size: 4.743vw;
+    font-weight: 900;
+    line-height: 5.208vw; /* 109.8% */
+    display: flex;
+    flex-direction: column;
+    -webkit-text-stroke-width: 0.104vw;
+    -webkit-text-stroke-color: #191919;
+    text-transform: uppercase;
+    transform: rotate(-5deg);
+}
+.treners__title span{
+    font-weight: 500;
+    color: transparent;
+}
+.treners__descr{    
+    margin-left: auto;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.042vw;
+    font-weight: 300;
+    line-height: normal;
+    width: 100%;
+    max-width: 29.167vw;
+    margin-top: 2.604vw;
+}
+.treners__slider{
+    margin-top: 6.25vw;
+}
+.treners__slide{
+    width: 100%;
+    position: relative;
+    max-width: 57.813vw;
+    display: flex;
+    align-items: start;
+    gap: 1.042vw;
+    justify-content: space-between;
+}
+.treners__slide-num{
+    -webkit-text-stroke-width: 0.104vw;
+    -webkit-text-stroke-color: #000;
+    font-size: 10.417vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 10.417vw;
+}
+.treners__slide-title{
+    font-size: 3.333vw;
+    font-weight: 600;
+    line-height: 115%; /* 3.833vw */
+    text-transform: uppercase;
+}
+.treners__slide-descr{
+    margin-top: 2.083vw;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.938vw;
+    font-weight: 400;
+    line-height: 115%; /* 1.078vw */
+}
+.treners__slide-image{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 23.958vw;
+    position: relative;
+}
+.treners__slide-image::after,
+.treners__slide-image::before{
+    content: '';
+    position: absolute;
+    background-image: url('../img/header/lenta.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 7.298vw;
+    height: 2.549vw;
+    transform: rotate(48.599deg);
+}
+.treners__slide-image::before {
+    top: -0.729vw;
+    right: -3.021vw;
+}
+.treners__slide-image::after {
+    bottom: -0.729vw;
+    left: -3.021vw;
+}
+.treners__slide-image img{
+    width: 100%;
+}
+.treners__slide-content{
+    width: 100%;
+    max-width: 16.927vw;
+}
+.treners__slide-link{
+    margin-top: 1.042vw;
+    gap: 1.042vw;
+    font-size: 1.354vw;
+    font-weight: 500;
+    line-height: 1.458vw; /* 107.692% */
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    max-width: max-content;
+    transition: all .1s ease;
+}
+.treners__slide-link svg{
+    height: auto;
+    width: 2.396vw;
+}
+.treners__slide-link svg path{
+    transition: all .1s ease;
+}
+.treners__slide-link:hover{
+    color: #F2F302;
+}
+.treners__slide-link:hover svg path{
+    fill: #F2F302;
+}
+.treners__bottom{
+    margin-top: 5.208vw;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 6.771vw;
+}
+.treners__nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.083vw;
     position: relative;
     z-index: 1;
-    padding: 200px 0;
+}
+.treners__next svg,
+.treners__prev svg{
+    height: auto;
+    width: 2.083vw;
+}
+.treners__count{
+    color: #FFF;
+    font-size: 5vw;
+    font-weight: 600;
+    line-height: 4.583vw; /* 91.667% */
+    text-transform: uppercase;
+    display: flex;
+    align-items: end;
+    gap: 0.521vw;
+    max-width: max-content;
+    width: 100%;
+}
+.treners__count span{
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+}
+.treners__our{
+    font-family: "Black Ops One", sans-serif;
+    font-size: 7.552vw;
+    font-weight: 400;
+    line-height: 97%; /* 7.326vw */
+}
+.treners__nav::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/nav-bg.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 148%;
+    height: 126%;
+}
+.treners__inner{
+    position: relative;
+    z-index: 10;
+}
+.treners::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 41.116vw;
+    height: 28.175vw;
+    bottom: 4.167vw;
+    left: -11.458vw;
+    background-image: url('../img/contacts-bg.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+@media (max-width: 768px) {
+    .treners {
+        padding: 60px 0;
+    }
+    .treners::before {
+        width: 569.427px;
+        height: 540.96px;
+        bottom: -139.994px;
+        left: -139.994px;
+    }
+    .treners::after {
+        width: 610.765px;
+        height: 670.31px;
+        top: -102.006px;
+        right: -448.998px;
+    }
+    .treners .howit__line{
+        top: -90.206px;
+    }
+    .treners__title{
+        font-size: 40px;
+        line-height: 40px;
+        -webkit-text-stroke-width: 1[x];
+    }
+    .treners__descr{
+        font-size: 16px;
+        max-width: 100%;
+        margin-top: 40px;
+    }
+    .treners__slider{
+        margin-top: 40px;
+        max-width: 320px;
+    }
+    .treners__slide{
+        max-width: 100%;
+        gap: 40px;
+        flex-direction: column;
+    }
+    .treners__slide-num {
+        -webkit-text-stroke-width: 1px;
+        font-size: 60px;
+        line-height: 60px;
+        margin-bottom: -20px;
+    }
+    .treners__slide-title{
+        font-size: 46px;
+        line-height: 115%; /* 73.594px */
+    }
+    .treners__slide-descr{
+        margin-top: 30px;
+        font-size: 16px;
+        line-height: 115%; /* 20.698px */
+    }
+    .treners__slide-image{
+        max-width: 100%;
+    }
+    .treners__slide-image::after,
+    .treners__slide-image::before{
+        width: 140.122px;
+        height: 48.941px;
+    }
+    .treners__slide-image::before {
+        top: -13.997px;
+        right: -58.003px;
+    }
+    .treners__slide-image::after {
+        bottom: -13.997px;
+        left: -58.003px;
+    }
+    .treners__slide-content{
+        max-width: 324.998px;
+    }
+    .treners__slide-link{
+        margin-top: 20.006px;
+        gap: 20.006px;
+        font-size: 18px;
+        line-height: normal;
+    }
+    .treners__slide-link svg{
+        width: 20px;
+    }
+    .treners__bottom{
+        margin-top: 40px;
+        gap: 40px;
+        flex-direction: column;
+    }
+    .treners__nav{
+        gap: 20px;
+    }
+    .treners__next svg,
+    .treners__prev svg{
+        width: 20px;
+    }
+    .treners__count{
+        font-size: 40px;
+        line-height: 40px;
+        gap: 10px;
+    }
+    .treners__count span{
+        font-size: 24px;
+        line-height: 24px;
+    }
+    .treners__our{
+        font-size: 45px;
+        line-height: 97%; /* 140.659px */
+    }
+    .treners__nav::before {
+        width: 158%;
+        height: 146%;
+    }
 }
