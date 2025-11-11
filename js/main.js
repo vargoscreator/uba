@@ -312,14 +312,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 
-    document.querySelectorAll(".btn").forEach(btn => {
-        ScrollTrigger.create({
-            trigger: btn,
-            start: "bottom bottom-=100",
-            onEnter: () => btn.classList.add("animated"),
-            onLeaveBack: () => btn.classList.remove("animated")
+        document.querySelectorAll(".btn").forEach(btn => {
+            ScrollTrigger.create({
+                trigger: btn,
+                start: "bottom bottom-=100",
+                onEnter: () => btn.classList.add("animated"),
+                onLeaveBack: () => btn.classList.remove("animated")
+            });
         });
-    });
 
     document.querySelectorAll(".btn-2").forEach(btn => {
         ScrollTrigger.create({
