@@ -360,6 +360,68 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    let tlInfo = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".scheduleinfo__inner",
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        }
+        });
+        tlInfo.from(".scheduleinfo__paper", {
+        x: -200,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+        })
+
+        .from(".scheduleinfo__title", {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+        }, "-=0.5")
+
+        .from(".scheduleinfo__icon", {
+        y: 100,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out"
+        }, "-=0.5")
+
+        .from(".scheduleinfo__when", {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out"
+        }, "-=0.5");
+
+        gsap.from(".scheduleinfo__about p, .scheduleinfo__about span", {
+        x: -100,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".scheduleinfo__about",
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        }
+        });
+
+        gsap.from(".scheduleinfo__buttons", {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".scheduleinfo__buttons",
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        }
+        });
+
+
     gsap.fromTo(".trainer__title", {
         x: "-100%",
         opacity: 0
@@ -1390,4 +1452,14 @@ document.querySelectorAll(".youget__item").forEach((item, index) => {
         toggleActions: "play none none reverse", 
       }
     });
-  });
+});
+
+
+
+const menuBtn = document.querySelectorAll('.header__menu-btn');
+menuBtn.forEach(element => {
+    element.addEventListener('click', () => {
+        element.classList.toggle('show-menu');
+    });
+});
+
