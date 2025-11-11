@@ -191,47 +191,55 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     const parallaxItems = [{
-            selector: ".about__title",
+            selector: ".aboutserv__title",
             speed: 0.15
         },
         {
-            selector: ".about__name",
+            selector: ".aboutserv__name",
             speed: 0.15
         },
         {
-            selector: ".about__left .about__image:nth-of-type(1)",
+            selector: ".aboutserv__left .aboutserv__image:nth-of-type(1)",
             speed: 0.3
         },
         {
-            selector: ".about__left .about__descr",
+            selector: ".aboutserv__left .aboutserv__descr",
             speed: 0.2
         },
         {
-            selector: ".about__left .about__image:nth-of-type(2)",
+            selector: ".aboutserv__left .aboutserv__image:nth-of-type(2)",
             speed: 0.35
         },
         {
-            selector: ".about__who",
+            selector: ".aboutserv__who",
             speed: 0.3
         },
         {
-            selector: ".about__icon",
-            speed: 0.5
-        },
-        {
-            selector: ".about__right h3",
-            speed: 0.2
-        },
-        {
-            selector: ".about__right .about__image",
+            selector: ".aboutserv__left .aboutserv__image",
             speed: 0.3
         },
         {
-            selector: ".about__right .about__descr",
+            selector: ".aboutserv__left .aboutserv__descr",
             speed: 0.18
         },
         {
-            selector: ".about__right .about__name",
+            selector: ".aboutserv__center .aboutserv__descr",
+            speed: 0.3
+        },
+        {
+            selector: ".aboutserv__icon",
+            speed: 0.25
+        },
+        {
+            selector: ".aboutserv__center .aboutserv__logo",
+            speed: 0.2
+        },
+        {
+            selector: ".aboutserv__center .aboutserv__info",
+            speed: 0.15
+        },
+        {
+            selector: ".aboutserv__right .aboutserv__image",
             speed: 0.22
         },
     ];
@@ -249,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    document.querySelectorAll(".about__name").forEach((aboutName) => {
+    document.querySelectorAll(".aboutserv__name").forEach((aboutName) => {
         const aboutNameText = aboutName.textContent;
         aboutName.textContent = "";
 
@@ -455,33 +463,33 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 
-    gsap.from(".about__icon", {
+    gsap.from(".aboutserv__icon", {
         scale: 2,
         opacity: 0,
         rotation: 15,
         duration: 0.4,
         ease: "back.out(3)",
         scrollTrigger: {
-            trigger: ".about__icon",
+            trigger: ".aboutserv__icon",
             start: "top 30%",
             toggleActions: "play none none reverse"
         }
     });
 
-    gsap.from(".about__who", {
+    gsap.from(".aboutserv__who", {
         scale: 0.4,
         opacity: 0,
         rotation: 15,
         duration: 0.4,
         ease: "back.out(3)",
         scrollTrigger: {
-            trigger: ".about__who",
+            trigger: ".aboutserv__who",
             start: "top 60%",
             toggleActions: "play none none reverse"
         }
     });
 
-    gsap.utils.toArray(".about__descr span").forEach((el) => {
+    gsap.utils.toArray(".aboutserv__descr span").forEach((el) => {
         gsap.to(el, {
             y: 0,
             opacity: 1,
@@ -495,32 +503,32 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    gsap.from(".about__united span", {
+    gsap.from(".aboutserv__united span", {
         x: -150,
         opacity: 0,
         duration: 1,
         ease: "power3.out",
         stagger: 0.3,
         scrollTrigger: {
-            trigger: ".about__united",
+            trigger: ".aboutserv__united",
             start: "top 80%",
             toggleActions: "play none none reverse"
         }
     });
     gsap.timeline({
             scrollTrigger: {
-                trigger: ".about__title",
+                trigger: ".aboutserv__title",
                 start: "top 80%",
                 toggleActions: "play none none reverse"
             }
         })
-        .from(".about__title", {
+        .from(".aboutserv__title", {
             x: -200,
             opacity: 0,
             duration: 0.8,
             ease: "power3.out"
         })
-        .from(".about__title span", {
+        .from(".aboutserv__title span", {
             x: -200,
             opacity: 0,
             duration: 0.8,
