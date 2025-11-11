@@ -151,6 +151,25 @@ document.addEventListener("DOMContentLoaded", function() {
         },
     });
 
+    let yougetSlider = new Swiper(".youget__slider", {
+        loop: false,
+        spaceBetween: 150,
+        slidesPerView: 'auto',
+        speed: 800,
+        navigation: {
+            nextEl: ".youget__next",
+            prevEl: ".youget__prev",
+        },
+        pagination: {
+            el: '.youget__count',
+            type: 'custom',
+            renderCustom: function (swiper, current, total) {
+                let totalSlides = (total < 10) ? `0${total}` : total; 
+                return `${current} <span>/${totalSlides}</span>`;
+            }
+        },
+    });
+
 
 
     gsap.registerPlugin(ScrollTrigger);
@@ -990,6 +1009,7 @@ document.addEventListener("DOMContentLoaded", function() {
             toggleActions: "play none none reverse",
         }
     });
+    
 
 
 
@@ -1431,7 +1451,7 @@ gsap.fromTo(".youget__title span:first-child", {
         }
     });
 
-gsap.utils.toArray(".youget__descr").forEach((elem, i) => {
+gsap.utils.toArray(".youget__name").forEach((elem, i) => {
     gsap.from(elem, {
         y: 50,
         opacity: 0,
@@ -1446,17 +1466,28 @@ gsap.utils.toArray(".youget__descr").forEach((elem, i) => {
     });
 });
 
+gsap.from(".youget__nav", {
+    y: 100,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".youget__inner",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+    }
+});
 
-document.querySelectorAll(".youget__item").forEach((item, index) => {
-    const fromX = index % 2 === 0 ? -150 : 150;
+
+document.querySelectorAll(".youget__slide").forEach((item, index) => {
     gsap.from(item, {
-      x: fromX,
+      y: 100,
       opacity: 0,
       duration: 0.8,
       ease: "power3.out",
       scrollTrigger: {
         trigger: item,
-        start: "top 20%",
+        start: "top 80%",
         toggleActions: "play none none reverse", 
       }
     });

@@ -181,8 +181,9 @@ main.main{
     overflow: hidden;
     position: relative;
 }
+.mark,
 mark{
-    color: #F2F302;
+    color: #F2F302 !important;
 }
 @media (max-width: 768px) {
     main.main{
@@ -5494,7 +5495,7 @@ mark{
     }
     .prices-service::before{
         top: calc(100% - 19.2px);
-        height: 191.002px;
+        height: 71.002px;
         width: 110%;
     }
     .prices__title{
@@ -5630,7 +5631,6 @@ mark{
 
 /* youget */
 .youget{
-    padding: 200px 0;
     position: relative;
     z-index: 1;
     background-color: #2D2D2D;
@@ -5639,6 +5639,41 @@ mark{
     background-size: cover;
     padding: 6.25vw 0 12vw;
     background-position: center;
+}
+.youget .howit__line{
+    transform: rotate(-4.13deg);
+}
+.youget .howit__line-second{
+    transform: rotate(0.517deg);
+    top: -0.979vw;
+}
+.youget::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: -9.4vw;
+    height: 9.948vw;
+    width: 110%;
+    left: 50%;
+    transform: translateX(-50%) scaleY(-1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../img/bottom-icon.svg');
+}
+.youget::after{
+    content: '';
+    position: absolute;
+    position: absolute;
+    top: calc(100% - 1vw);
+    height: 9.948vw;
+    width: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../img/bottom-icon.svg');
 }
 .youget__inner{
     position: relative;
@@ -5660,9 +5695,237 @@ mark{
     left: -18.229vw;
     pointer-events: none;
 }
+.youget__top{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 0.521vw;
+    width: 100%;
+}
+.youget__info{
+    display: flex;
+    flex-direction: column;
+    gap: 1.042vw;
+    text-align: right;
+    max-width: 22.396vw;
+}
+.youget__name{
+    color: #FFF;
+    text-align: right;
+    font-size: 1.667vw;
+    font-weight: 600;
+    line-height: 115%; /* 1.917vw */
+    text-transform: uppercase;
+}
+.youget__title{
+    color: #FFF;
+    font-size: 5.729vw;
+    font-weight: 600;
+    line-height: 5.729vw; /* 106.667% */
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    transform: rotate(-5deg);
+}
+.youget__title span:last-of-type{
+    color: #F2F302;
+    margin-left: 8.854vw;
+}
+
+.youget__slider{
+    width: 100%;
+    margin-top: 5.208vw;
+    margin-left: 2.604vw;
+}
+.youget__slide-image{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 26.51vw;
+}
+.youget__slide-image img{
+    width: 100%;
+}
+.youget__slide-image::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../img/header/bg.png');
+    top: -0.521vw;
+    left: -0.521vw;
+    right: -0.521vw;
+    bottom: -0.521vw;
+}
+.youget__slide-image::after {
+    content: '';
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../img/header/lenta.png');
+    width: 17.448vw;
+    height: 6.094vw;
+    top: -2.029vw;
+    left: 53%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.youget__slide{
+    position: relative;
+    max-width: 30vw;
+    width: 100%;
+}
+.youget__slide:nth-of-type(odd) {
+    margin-top: 8.854vw;
+}
+.youget__slide-num {
+    position: absolute;
+    top: -3.385vw;
+    left: -5.729vw;
+    color: #FFF;
+    font-size: 6.25vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    z-index: 23;
+    min-width: 6.563vw;
+}
+.youget__slide-title{
+    margin-top: 2.604vw;
+    color: #FFF;
+    font-size: 2.604vw;
+    font-weight: 600;
+    line-height: 3.125vw; /* 120% */
+    text-transform: uppercase;
+}
+.youget__nav{
+    margin-top: 0.521vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.083vw;
+}
+.youget__prev svg,
+.youget__next svg{
+    height: auto;
+    width: 2.083vw;
+}
+.youget__count{
+    color: #FFF;
+    font-size: 5vw;
+    font-weight: 600;
+    line-height: 4.583vw; /* 91.667% */
+    text-transform: uppercase;
+    display: flex;
+    align-items: end;
+    gap: 0.521vw;
+    max-width: max-content;
+    width: 100%;
+}
+.youget__count span{
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+}
 
 @media (max-width: 768px) {
-    
+    .youget{
+        padding: 40px 0 60px;
+    }
+    .youget .howit__line{
+        top: -40px;
+    }
+    .youget .howit__line-second{
+        top: -18.797px;
+    }
+    .youget::before {
+        top: -140.48px;
+        height: 191.002px;
+    }
+    .youget::after{
+        top: calc(100% - 19.2px);
+        height: 191.002px;
+    }
+    .youget__inner::before {
+        width: 571.411px;
+        height: 353.312px;
+        top: -99.994px;
+        left: -349.997px;
+    }
+    .youget__top{
+        gap: 40px;
+        flex-direction: column;
+    }
+    .youget__info{
+        gap: 20px;
+        max-width: 430.003px;
+    }
+    .youget__name{
+        font-size: 20px;
+        line-height: 115%; /* 36.806px */
+    }
+    .youget__title{
+        font-size: 40px;
+        line-height: normal;
+    }
+    .youget__title span:last-of-type{
+        margin-left: 20px;
+    }
+    .youget__slider{
+        margin-top: 60px;
+        margin-left: 30px;
+    }
+    .youget__slide-image{
+        max-width: 85%;
+    }
+    .youget__slide-image::before{
+        top: -10.003px;
+        left: -10.003px;
+        right: -10.003px;
+        bottom: -10.003px;
+    }
+    .youget__slide-image::after {
+        width: 305.002px;
+        height: 87.005px;
+        top: -40.957px;
+    }
+    .youget__slide{
+        max-width: 100%;
+    }
+    .youget__slide:nth-of-type(odd) {
+        margin-top: 0;
+    }
+    .youget__slide-num {
+        top: -50px;
+        left: -30px;
+        font-size: 40px;
+        min-width: 126.01px;
+    }
+    .youget__slide-title{
+        margin-top: 20px;
+        font-size: 24px;
+        line-height: normal;
+    }
+    .youget__nav{
+        margin-top: 40px;
+        gap: 20px;
+    }
+    .youget__prev svg,
+    .youget__next svg{
+        width: 20px;
+    }
+    .youget__count{
+        font-size: 40px;
+        line-height: 40px;
+        gap: 10px;
+    }
+    .youget__count span{
+        font-size: 24px;
+        line-height: 24px;
+    }
 }
 
 
@@ -5930,3 +6193,14 @@ mark{
 
 
 /*  */
+
+
+
+
+
+
+.treners{
+    position: relative;
+    z-index: 1;
+    padding: 200px 0;
+}
