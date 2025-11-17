@@ -1,3 +1,26 @@
+if (typeof jQuery !== 'undefined') {
+    $(document).ready(function () {
+        $('.faq__item-title').on('click', function () {
+            let parent = $(this).closest('.faq__item');
+            let content = parent.find('.faq__item-descr');
+
+            if (parent.hasClass('active')) {
+                parent.removeClass('active');
+                content.stop(true, true).slideUp(300);
+            } else {
+                $('.faq__item.active').removeClass('active')
+                    .find('.faq__item-descr').stop(true, true).slideUp(300);
+
+                parent.addClass('active');
+                content.stop(true, true).slideDown(300);
+            }
+        });
+    });
+
+}
+
+
+
 window.scrollTo(0, 0)
 document.addEventListener("DOMContentLoaded", function() {
     if (document.querySelector(".hero")) {
@@ -227,73 +250,48 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    let parallaxAnimations = [];
 
-    const parallaxItems = [{
-            selector: ".aboutserv__title",
-            speed: 0.15
-        },
-        {
-            selector: ".aboutserv__name",
-            speed: 0.15
-        },
-        {
-            selector: ".aboutserv__left .aboutserv__image:nth-of-type(1)",
-            speed: 0.3
-        },
-        {
-            selector: ".aboutserv__left .aboutserv__descr",
-            speed: 0.2
-        },
-        {
-            selector: ".aboutserv__left .aboutserv__image:nth-of-type(2)",
-            speed: 0.35
-        },
-        {
-            selector: ".aboutserv__who",
-            speed: 0.3
-        },
-        {
-            selector: ".aboutserv__left .aboutserv__image",
-            speed: 0.3
-        },
-        {
-            selector: ".aboutserv__left .aboutserv__descr",
-            speed: 0.18
-        },
-        {
-            selector: ".aboutserv__center .aboutserv__descr",
-            speed: 0.3
-        },
-        {
-            selector: ".aboutserv__icon",
-            speed: 0.25
-        },
-        {
-            selector: ".aboutserv__center .aboutserv__logo",
-            speed: 0.2
-        },
-        {
-            selector: ".aboutserv__center .aboutserv__info",
-            speed: 0.15
-        },
-        {
-            selector: ".aboutserv__right .aboutserv__image",
-            speed: 0.22
-        },
-    ];
-    parallaxItems.forEach(item => {
-        gsap.to(item.selector, {
-            y: () => -(window.innerHeight * item.speed),
-            ease: "none",
-            scrollTrigger: {
-                trigger: item.selector,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true,
-                toggleActions: "play none none reverse"
-            }
-        });
-    });
+    function initParallax() {
+        parallaxAnimations.forEach(anim => anim.scrollTrigger.kill());
+        parallaxAnimations = [];
+
+        if (window.innerWidth > 768) {
+            const parallaxItems = [
+                { selector: ".aboutserv__title", speed: 0.15 },
+                { selector: ".aboutserv__name", speed: 0.15 },
+                { selector: ".aboutserv__left .aboutserv__image:nth-of-type(1)", speed: 0.3 },
+                { selector: ".aboutserv__left .aboutserv__descr", speed: 0.2 },
+                { selector: ".aboutserv__left .aboutserv__image:nth-of-type(2)", speed: 0.35 },
+                { selector: ".aboutserv__who", speed: 0.3 },
+                { selector: ".aboutserv__left .aboutserv__image", speed: 0.3 },
+                { selector: ".aboutserv__left .aboutserv__descr", speed: 0.18 },
+                { selector: ".aboutserv__center .aboutserv__descr", speed: 0.3 },
+                { selector: ".aboutserv__icon", speed: 0.25 },
+                { selector: ".aboutserv__center .aboutserv__logo", speed: 0.2 },
+                { selector: ".aboutserv__center .aboutserv__info", speed: 0.15 },
+                { selector: ".aboutserv__right .aboutserv__image", speed: 0.22 },
+            ];
+
+            parallaxItems.forEach(item => {
+                const anim = gsap.to(item.selector, {
+                    y: () => -(window.innerHeight * item.speed),
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: item.selector,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true,
+                        toggleActions: "play none none reverse"
+                    }
+                });
+                parallaxAnimations.push(anim);
+            });
+        }
+    }
+    initParallax();
+    window.addEventListener("resize", initParallax);
+
 
     document.querySelectorAll(".aboutserv__name").forEach((aboutName) => {
         const aboutNameText = aboutName.textContent;
@@ -331,34 +329,41 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 
-    gsap.fromTo(".management__title span:first-child", {
-        x: "-100%",
-        opacity: 0
-    }, {
-        x: "0%",
-        opacity: 1,
-        scrollTrigger: {
-            trigger: ".management__inner",
-            start: "top 120%",
-            end: "bottom-=100%",
-            scrub: true,
-            toggleActions: "play none none reverse"
-        }
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 769px)", () => {
+
+        gsap.fromTo(".management__title span:first-child", {
+            x: "-100%",
+            opacity: 0
+        }, {
+            x: "0%",
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".management__inner",
+                start: "top 120%",
+                end: "bottom-=100%",
+                scrub: true,
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        gsap.fromTo(".management__title span:last-child", {
+            x: "100%",
+            opacity: 0
+        }, {
+            x: "0%",
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".management__inner",
+                start: "top 120%",
+                end: "bottom-=90%",
+                toggleActions: "play none none reverse",
+                scrub: true
+            }
+        });
+
     });
-    gsap.fromTo(".management__title span:last-child", {
-        x: "100%",
-        opacity: 0
-    }, {
-        x: "0%",
-        opacity: 1,
-        scrollTrigger: {
-            trigger: ".management__inner",
-            start: "top 120%",
-            end: "bottom-=90%",
-            toggleActions: "play none none reverse",
-            scrub: true
-        }
-    });
+
     gsap.utils.toArray(".management__item").forEach((item, i) => {
         gsap.from(item, {
             x: i % 2 === 0 ? -100 : 100,
@@ -1087,18 +1092,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.querySelectorAll(".faq__item-title").forEach(title => {
-    title.addEventListener("click", () => {
-        const item = title.parentElement;
-        const isActive = item.classList.contains("active");
-        if (isActive) {
-            item.classList.remove("active");
-        } else {
-            document.querySelectorAll(".faq__item.active").forEach(i => i.classList.remove("active"));
-            item.classList.add("active");
-        }
-    });
-});
 const scrollUp = document.querySelector(".scroll-up");
 window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
