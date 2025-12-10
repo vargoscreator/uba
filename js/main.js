@@ -1459,18 +1459,76 @@ document.querySelectorAll('.heroBanner__price-btn').forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
   const buttons = document.querySelectorAll('.recruitment__select-btn');
   const results = document.querySelectorAll('.prices__result');
+  function animateIn(block) {
+    const tl = gsap.timeline();
+
+    const firstSpan = block.querySelector('span:first-child');
+    const lastSpan = block.querySelector('span:last-child');
+
+    if (firstSpan && lastSpan) {
+        gsap.fromTo(firstSpan, {
+            x: "-100%",
+            opacity: 0
+        }, {
+            x: "0%",
+            opacity: 1,
+            scrollTrigger: {
+                trigger: block,
+                start: "top 120%",
+                end: "bottom-=100%",
+                scrub: true,
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        gsap.fromTo(lastSpan, {
+            x: "100%",
+            opacity: 0
+        }, {
+            x: "0%",
+            opacity: 1,
+            scrollTrigger: {
+                trigger: block,
+                start: "top 120%",
+                end: "bottom-=90%",
+                scrub: true,
+                toggleActions: "play none none reverse"
+            }
+        });
+    }
+    tl.fromTo(block.querySelector('.prices__image'), 
+      { y: 80, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, 0.2);
+
+    tl.fromTo(block.querySelectorAll('.prices__table-info, .prices__table-item'), 
+      { y: 40, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "power2.out" }, 0.4);
+
+    tl.fromTo(block.querySelector('.prices__table-btn'), 
+      { y: 40, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 0.8);
+  }
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
-      const price = button.getAttribute('data-recruitment-price-btn');
+      const targetId = button.getAttribute('data-recruitment-price-btn');
+      const targetBlock = document.querySelector(`.prices__result[data-price-result="${targetId}"]`);
+      if (!targetBlock) return;
       buttons.forEach(btn => btn.classList.remove('active'));
-      results.forEach(result => result.classList.remove('active'));
+      results.forEach(res => res.classList.remove('active'));
       button.classList.add('active');
-      document.querySelector(`.prices__result[data-price-result="${price}"]`)?.classList.add('active');
+      targetBlock.classList.add('active');
+      gsap.delayedCall(0.05, () => {
+        ScrollTrigger.refresh();
+        animateIn(targetBlock);
+      });
     });
   });
+  const initialActive = document.querySelector('.prices__result.active');
+  if (initialActive) {
+    gsap.delayedCall(0.3, () => animateIn(initialActive));
+  }
 });
-
 
 gsap.fromTo(".youget__title span:first-child", {
         x: "-100%",
